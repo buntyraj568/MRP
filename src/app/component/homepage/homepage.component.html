@@ -1,0 +1,56 @@
+<div class="container" id="bd">
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+            <tr>
+                <th>
+                    Name:
+                </th>
+                
+                <th>
+                    Address:
+                </th>
+                <th>
+                    Country:
+                </th>
+                <th>
+                    State:
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+
+                    PAN
+                </th>
+                <th>
+
+                    Contact
+                </th>
+                <th>
+
+                    Date of Birth
+                </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${listEmployees}">
+                <td th:text="${employee.firstName}">Bunty</td>
+                <td th:text="${employee.lastName}">Agra</td>
+                <td th:text="${employee.email}">Delhi</td>
+                <td th:text="${employee.firstName}">Uttar Pradesh</td>
+                <td th:text="${employee.lastName}">bunty@gmail.com</td>
+                <td th:text="${employee.email}">DFY14524785</td>
+                <td th:text="${employee.firstName}">9058418742</td>
+                <td th:text="${employee.lastName}">10/06/1997</td>
+                <td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary"
+                        [routerLink]="['/update']">Update</a>&nbsp;
+                    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-success"
+                        [routerLink]="['/claim']">Claim</a>&nbsp;
+                    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger"
+                        [routerLink]="['/login']">Logout</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

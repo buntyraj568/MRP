@@ -1,0 +1,95 @@
+<br>
+
+<header class="p-3 bg-primary text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+
+        <h2 id="n1">Welcome to Member Update Portal</h2>
+
+      </ul>
+
+
+
+    </div>
+  </div>
+</header>
+
+
+
+
+<br><br>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="guest-form-card card">
+
+      <div class="card-header text-center">
+        <h2>Update Here</h2>
+      </div>
+
+      <div class="card-body">
+        <form #registerForm="ngForm" (ngSubmit)="update()">
+
+
+          <div class="form-group">
+            <label for="name">Password</label>
+            <input id="password" class="form-control" [ngClass]="{ 'is-invalid': name.touched && name.invalid }"
+              name="password" #name="ngModel" [(ngModel)]="model.password" required placeholder="Enter Your Password"
+              input type="password"  />
+            <span class="invalid-feedback">Password can't be blank.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="sel2">State:</label>
+            <select class="form-control" id="">
+              <option>Delhi</option>
+              <option>Uttar Pradesh</option>
+              <option>Bihar</option>
+              <option>Goa</option>
+              <option>Andhra Pradesh</option>
+              <option>Assam</option>
+              <option>Gujrat</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="model.email"
+              required placeholder="Enter Your Email" />
+
+
+          </div>
+          <div class="form-group">
+            <label for="pan">PAN Number</label>
+            <input type="text" class="form-control" name="pan" FormControlName="pan"
+              [ngClass]="{ 'is-invalid': pan.touched && pan.invalid }" #pan="ngModel" [(ngModel)]="model.pan"
+              pattern="[A-Za-z0-9]{12}" required ngModel placeholder="Enter Your PAN">
+            <span class="invalid-feedback">Please Enter correct pan number.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="contact">Contact</label>
+            <input id="contact" class="form-control" name="contact"
+              [ngClass]="{ 'is-invalid': contact.touched && contact.invalid }" #contact="ngModel"
+              [(ngModel)]="model.contact" required Maxlength="10" placeholder="Enter Your Contact" />
+            <span class="invalid-feedback">
+              <span>Contact No. can't be blank.</span>
+
+            </span>
+          </div>
+
+
+
+
+
+
+
+          <br>
+          <button class="btn btn-primary btn-block" [routerLink]="['/homepage']">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

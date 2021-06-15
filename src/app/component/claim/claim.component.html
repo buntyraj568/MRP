@@ -1,0 +1,81 @@
+
+
+<br>
+<header class="p-3 bg-success text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+        <h2 id="n1">Welcome to Member Claim Portal</h2>
+
+      </ul>
+
+
+    </div>
+  </div>
+</header>
+
+
+<br><br>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="guest-form-card card">
+
+      <div class="card-header text-center">
+        <h2>Claim Here</h2>
+      </div>
+
+      <div class="card-body">
+        <form #registerForm="ngForm" (ngSubmit)="claim()">
+          <div class="form-group">
+            <label for="name">Member Name</label>
+            <input id="name" class="form-control" name="membername"
+              #name="ngModel" [(ngModel)]="model.name" required placeholder="Enter Member Name" />
+        
+          </div>
+          <div class="form-group">
+            <label for="name">Member DOB</label>
+            <input id="password" class="form-control"
+              name="password" #name="ngModel" [(ngModel)]="model.password" required placeholder="Enter Member DOB"
+              input type="date" />
+            
+          </div>
+          <div class="form-group">
+            <label for="name">Date Of Admission</label>
+            <input id="address" class="form-control" 
+              name="address" #address="ngModel" [(ngModel)]="model.address" required placeholder="Date Of Admission"input type="date" />
+
+          </div>
+          <div class="form-group">
+            <label for="name">Date Of Discharge</label>
+            <input id="address" class="form-control" 
+              name="address" #address="ngModel" [(ngModel)]="model.address" required placeholder="Date Of Discharge" input type="date" />
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="email">Provider Name</label>
+            <input type="email" id="email" class="form-control" name="email"
+               #email="ngModel" [(ngModel)]="model.email"
+              required placeholder="Enter Provider Name" />
+
+          </div>
+          <div class="form-group">
+            <label for="email">Total Bill Amount</label>
+            <input type="text" id="email" class="form-control" name="email"
+               #email="ngModel" [(ngModel)]="model.email"
+              required placeholder="Enter Amount" />
+
+          </div>
+
+         
+
+          <br>
+          <button class="btn btn-primary btn-block">Claim</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

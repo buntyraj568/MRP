@@ -1,0 +1,113 @@
+<br><br>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="guest-form-card card">
+
+      <div class="card-header text-center">
+        <h2>Register Here</h2>
+      </div>
+
+      <div class="card-body">
+        <form #registerForm="ngForm" (ngSubmit)="register()" novalidate>
+          <div class="form-group">
+            <label for="username">Name:</label>
+            <input
+            id="name"
+            class="form-control"  pattern="[a-zA-Z]+[ ][a-zA-Z]+"
+            [ngClass]="{ 'is-invalid': name.touched && name.invalid }" name="name" #name="ngModel" [(ngModel)]="model.name" required
+            placeholder="Enter Your Name" />
+            <span class="invalid-feedback">Name is not correct.</span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" pattern=".{6,12}" class="form-control" [ngClass]="{ 'is-invalid': password.touched && password.invalid }" #password="ngModel" [(ngModel)]="model.password" required maxlength="12" placeholder="Enter Your Password" />
+            <span class="invalid-feedback">Please enter 6 to 12 charecter.</span>
+          </div>
+          <div class="form-group">
+            <label for="name">Address</label>
+            <input id="address" class="form-control" name="address" #address="ngModel" [(ngModel)]="model.address"
+             placeholder="Enter Your Address" required />
+
+          </div>
+
+          <div class="form-group">
+            <label for="sel1">Country:</label>
+            <select class="form-control" id="sel1">
+              <option>India</option>
+              <option>Pakistan</option>
+              <option>Bhutan</option>
+              <option>Sri Lanka</option>
+              <option>Nepal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sel2">State:</label>
+            <select class="form-control" id="">
+              <option>Delhi</option>
+              <option>Uttar Pradesh</option>
+              <option>Bihar</option>
+              <option>Goa</option>
+              <option>Andhra Pradesh</option>
+              <option>Assam</option>
+              <option>Gujrat</option>
+            </select>
+          </div>
+
+
+
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              
+            [ngClass]="{ 'is-invalid': email.touched && email.invalid }"    #email="ngModel"  [(ngModel)]="model.email" 
+            name="email"	pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required ngModel  placeholder="Enter Your Email">
+              <span class="invalid-feedback" >Please Enter Correct Email .</span>
+             
+          </div>
+
+          <div class="form-group">
+            <label for="pan">PAN Number</label>
+            <input type="text" class="form-control" name="pan" FormControlName="pan"
+            [ngClass]="{ 'is-invalid': pan.touched && pan.invalid }"    #pan="ngModel"  [(ngModel)]="model.pan" 
+             pattern="[A-Za-z0-9]{12}" required ngModel  placeholder="Enter Your PAN">
+          
+          <span class="invalid-feedback">Please Enter correct pan number.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact</label>
+          <input
+           
+            id="contact"
+            class="form-control"
+           name="contact" FormcontrolName="contact"
+           [ngClass]="{ 'is-invalid': contact.touched && contact.invalid }"    #contact="ngModel"  [(ngModel)]="model.contact" 
+           pattern="[0-9]{10}$" required ngModel maxlength="10"  placeholder="Enter Your Contact ">
+          
+          <span class="invalid-feedback">
+            <span  >Please enter 10 digit number.</span>
+
+          </span>
+          </div>
+
+          <div class="form-group">
+            <label for="name">D.O.B</label>
+            <input type="text" id="dob" class="form-control" data-date-format="mm/dd/yyyy" placeholder="mm/dd/yyyy"
+              required />
+
+
+
+          </div>
+
+          <br>
+          <button type="submit" class="btn btn-primary btn-block" [routerLink]="['/homepage']">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
